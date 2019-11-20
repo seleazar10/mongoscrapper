@@ -14,7 +14,7 @@ db.on('error', function (err) {
 
 
 app.use(express.json())
-// app.use(express.urlencoded())
+app.use(express.urlencoded())
 
 app.use(express.static('public')); 
 
@@ -32,6 +32,8 @@ app.get('/add', function (req, res) {
         .then(function (response) {
             // handle success
             // console.log(response);
+
+            console.log(response.data)
 
             const $ = cheerio.load(response.data)
 
@@ -71,11 +73,6 @@ app.get('/add', function (req, res) {
             }
 
             res.json(headliner)
-
-           
-
-
-            
 
 
         })

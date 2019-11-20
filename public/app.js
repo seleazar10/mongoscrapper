@@ -6,8 +6,6 @@ $('.btno').on('click', function () {
     console.log('btno clicked')
 
 
-
-
     $.getJSON('/all', function (data) {
 
         for (var i = 0; i < data.length; i++) {
